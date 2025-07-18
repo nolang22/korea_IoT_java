@@ -1,0 +1,49 @@
+// Gradle 내에 Java 플러그인 사용 선언
+// : Java 컴파일, 테스트, JAR 생성 등 가능
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+// 프로젝트 그룹명 & 버전 설정
+group = 'org.example'
+version = '1.0-SNAPSHOT' // SNAPSHOT: 개발 중인 최신 상태의 버전 (특정 시점에 스토리지에 저장된 파일의 현재 상태)
+
+// JAVA 관련 설정 지정 블록
+java {
+    // JAVA 소스 코드 호환 버전 설정
+    sourceCompatibility = JavaVersion.VERSION_17
+    // 컴파일된 클래스 파일의 자바 호환 버전 설정
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+// 외부 라이브러리를 가져올 저장소 설정
+// : 중앙 저장소(Maven Central) 사용 명시
+repositories {
+    mavenCentral()
+}
+
+// 프로젝트에서 사용할 의존성(라이브러리) 명시 블록
+// +) 의존성 업데이트 시 반드시 Gradle 리로드(refresh)가 필수!
+dependencies {
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    // implementation: 컴파일 + 런타임 모두 포함하는 설정
+    // cf) 롬복은 런타임에 필요한 라이브러리 X - 컴파일 시점에만 필요 O (컴파일 시 어노테이션을기반으로 코드 생성)
+
+    // compileOnly: 컴파일 시점에만 필요한 라이브러리 임을 명시
+    // annotationProcessor: 컴파일 시 어노테이션을 기반으로 코드 생성할 떄 사용
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+// 테스트 관련 설정 정의
+test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(17)
+}

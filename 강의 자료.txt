@@ -1,6 +1,13 @@
 
-https://koritbs.cafe24.com/student/index.php
+https://koritbs.cafe24.com/student/index.php  //코리아IT아카데미부산
 
-https://k-it.notion.site/IoT-21d82808bfd2801da3a3f0d87c4acb2c
+https://k-it.notion.site/IoT-21d82808bfd2801da3a3f0d87c4acb2c  //노션 페이지
 
-https://github.com/devgiants75/k_iot_java/tree/main
+https://github.com/devgiants75/k_iot_java/tree/main  //강사님 깃허브
+
+https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all  //SQL작업데이터
+
+
+git config --global user.name 
+
+git config --global user.email

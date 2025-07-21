@@ -92,6 +92,14 @@ public class E_Map {
         System.out.println(changeList); // [20, 25] // List<Integer> 타입
 
         System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ모두 읽기ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+
+
+
+
+
+
+
+
         // entrySet(): Map의 키와 값을 Set으로 변환
         System.out.println(studentAges.entrySet()); // [홍기기=20, 김지지=25]
     }

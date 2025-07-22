@@ -41,6 +41,9 @@ package org.example.chapter14;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class H_Stream {
@@ -92,18 +95,21 @@ public class H_Stream {
         // == 예제 == //
         // 1) "정"으로 시작하는 사람의 이름에 "님"을 붙여서 출력
         //          cf) 문자열.startsWith("문자열"): 해당 문자열로 시작 여부를 반환 (boolean)
-        System.out.println("== \"정\"으로 시작해서 \"님\"으로 끝나게 출력 ");
+        //          cf) 문자열.contains("문자열"): 해당 문자열 포함 여부를 반환 (boolean)
+        System.out.println("== \"정\"으로 시작해서 \"님\"을 붙여서 출력 ");
         streamNames.filter(name -> name.startsWith("정")) // "정지지", "정은은"
                 .map(name -> name + "님")
 //                .forEach(name -> System.out.println(name));
                 .forEach(System.out::println);
 
+        // 2)
         System.out.println();
         System.out.println("== 이름이 세글자인 사람만 출력");
         names.stream()
                 .filter(name -> name.length() == 3)
                 .forEach(System.out::println);
 
+        //3)
         System.out.println();
         System.out.println("== 중복 제거 후 오름차순 정렬하여 출력");
         names.stream()
@@ -111,9 +117,64 @@ public class H_Stream {
                 .sorted()
                 .forEach(System.out::println);
 
+        // 4)
         System.out.println();
         System.out.println("== 총 인원수 출력");
         long count = names.stream().count(); // .distinct() 사용시 중복제거
         System.out.println("총 인원 수: " + count);
+
+        // 5)
+        System.out.println();
+        System.out.println("== 이름 중 2번째 이후 사람 2명만 출력");
+        names.stream()
+                .skip(2)
+                .limit(2)
+                .forEach(System.out::println); // soutc: sout 메서드 참조 자동 완성
+
+        // 6)
+        System.out.println();
+        System.out.println("== 이름 길이의 합 구하기");
+        int totalLength = names.stream()
+                .map(name -> name.length())
+                // .reduce(초기값, 합산식);
+                // .reduce(0, x -> 최신값.sum(x))
+                // .reduce(0, (a, b) -> a + b); - a는 최신값(누적값), b는 순회값
+                .reduce(0, Integer::sum);
+
+        System.out.println("이름 길이 합산: " + totalLength);
+
+        //7)
+        System.out.println();
+        System.out.println("== 모든 이름을 하나의 문자열로 합차기 (comma 구분)");
+        String result = names.stream()
+                .collect(Collectors.joining(" & ")); // delimiter: 구분자
+        System.out.println("합친 이름들: " + result);
+
+        // 8)
+        System.out.println();
+        System.out.println("== 이름 길이 기준 내림차순 정렬");
+//        names.stream()
+//                .sorted() // 오름차순 정렬 (기본)
+//                .forEach(System.out::println);
+
+        names.stream()
+                // 내림 차순 (숫자가 큰 수 부터 정렬)
+                // a, b는 리스트 안의 두 문자열
+                // : b.length() - a.length()는 문자열 길이 차이를 이용하여 정렬 순서 결정
+                // >> b가 더 크면 양수
+                // >> 더 큰 값을 앞으로 정렬 (양수면 b가 먼저, 음수면 a가 먼저, 0이면 그대로)
+                .sorted((a, b) -> b.length() - a.length())
+                .forEach(System.out::println);
+
+        // 9)
+        System.out.println();
+        System.out.println("== 이름을 길이로 그롭화");
+        Map<Integer, List<String>> grouped = names.stream()
+//                .collect(Collectors.groupingBy(x -> x.length()));
+                .collect(Collectors.groupingBy(String::length));
+
+//        grouped.forEach(length, group) -> {
+//            System.out.println(length + "글자: " + group);
+//        });
     }
 }

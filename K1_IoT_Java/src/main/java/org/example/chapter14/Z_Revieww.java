@@ -14,5 +14,6 @@ package org.example.chapter14;
     사용목적: 코드 간결화, 함수형 프로그래밍 지원, Stream API와 함께 사용
    */
 
-public class Z_Review {
+
+public class Z_Revieww {
 }

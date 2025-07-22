@@ -168,13 +168,21 @@ public class H_Stream {
 
         // 9)
         System.out.println();
-        System.out.println("== 이름을 길이로 그롭화");
+        System.out.println("이름을 길이로 그룹화");
         Map<Integer, List<String>> grouped = names.stream()
 //                .collect(Collectors.groupingBy(x -> x.length()));
                 .collect(Collectors.groupingBy(String::length));
 
-//        grouped.forEach(length, group) -> {
-//            System.out.println(length + "글자: " + group);
-//        });
+        grouped.forEach((length, group) -> {
+            System.out.println(length + "글자: " + group);
+        });
+
+        System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+        Map<String, List<String>> groupedName = names.stream()
+                .collect(Collectors.groupingBy(String::toUpperCase));
+
+        groupedName.forEach((key, group) -> {
+            System.out.println(key + ": " + group);
+        });
     }
 }

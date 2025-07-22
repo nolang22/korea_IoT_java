@@ -83,6 +83,7 @@ public class D_Lambda {
 
         System.out.println("익명 클래스 결과: " + calculator1.add(3, 5));
 
+
         System.out.println(" === 람다식을 사용한 추상 메서드 구현 ===");
         Calculator calculator2 = (a, b) -> {
             int result = a + b;
@@ -94,6 +95,7 @@ public class D_Lambda {
         //      >> return 키워드까지 생략! (값은 곧바로 반환)
         Calculator calculator3 = (int a, int b) -> a + b;
         System.out.println("람다식 결과2: " + calculator3.add(7, 8));
+
 
         System.out.println(" === 매개변수가 없는 추상 메서드 표현 (람다식) ===");
         NoParams noParams1 = () -> {
@@ -107,9 +109,11 @@ public class D_Lambda {
         noParams2.sayHello();
         // cf) 매개변수가 없는 경우 () 괄호 생략 불가
 
+
         System.out.println("=== 매개변수가 하나인 추상 메서드 표현 (람다식) ===");
         OneParams oneParams =message -> System.out.println("출력: " + message);
         oneParams.print("안녕");
+
 
         System.out.println("=== 실행문이 여러 줄인 추상 메서드 표현 (람다식) ===");
         Operation operation = (int a, int b) -> {
@@ -117,6 +121,7 @@ public class D_Lambda {
             System.out.println("차: " + (a - b));
         };
         operation.operate(6,2);
+
 
         System.out.println("=== 반환값이 있는 추상 메서드 표현 (람다식) ===");
         StringLength stringLength = str -> str.length(); // 실행문이 한 줄: return + {} 생략 가능

@@ -103,37 +103,32 @@ public class H_Stream {
                 .forEach(System.out::println);
 
         // 2)
-        System.out.println();
-        System.out.println("== 이름이 세글자인 사람만 출력");
+        System.out.println("\n" + "== 이름이 세글자인 사람만 출력");
         names.stream()
                 .filter(name -> name.length() == 3)
                 .forEach(System.out::println);
 
         //3)
-        System.out.println();
-        System.out.println("== 중복 제거 후 오름차순 정렬하여 출력");
+        System.out.println("\n" + "== 중복 제거 후 오름차순 정렬하여 출력");
         names.stream()
                 .distinct()
                 .sorted()
                 .forEach(System.out::println);
 
         // 4)
-        System.out.println();
-        System.out.println("== 총 인원수 출력");
+        System.out.println("\n" + "== 총 인원수 출력");
         long count = names.stream().count(); // .distinct() 사용시 중복제거
         System.out.println("총 인원 수: " + count);
 
         // 5)
-        System.out.println();
-        System.out.println("== 이름 중 2번째 이후 사람 2명만 출력");
+        System.out.println("\n" + "== 이름 중 2번째 이후 사람 2명만 출력");
         names.stream()
                 .skip(2)
                 .limit(2)
                 .forEach(System.out::println); // soutc: sout 메서드 참조 자동 완성
 
         // 6)
-        System.out.println();
-        System.out.println("== 이름 길이의 합 구하기");
+        System.out.println("\n" + "== 이름 길이의 합 구하기");
         int totalLength = names.stream()
                 .map(name -> name.length())
                 // .reduce(초기값, 합산식);
@@ -143,16 +138,14 @@ public class H_Stream {
 
         System.out.println("이름 길이 합산: " + totalLength);
 
-        //7)
-        System.out.println();
-        System.out.println("== 모든 이름을 하나의 문자열로 합차기 (comma 구분)");
+        // 7)
+        System.out.println("\n" + "== 모든 이름을 하나의 문자열로 합차기 (comma 구분)");
         String result = names.stream()
                 .collect(Collectors.joining(" & ")); // delimiter: 구분자
         System.out.println("합친 이름들: " + result);
 
         // 8)
-        System.out.println();
-        System.out.println("== 이름 길이 기준 내림차순 정렬");
+        System.out.println("\n" + "== 이름 길이 기준 내림차순 정렬");
 //        names.stream()
 //                .sorted() // 오름차순 정렬 (기본)
 //                .forEach(System.out::println);

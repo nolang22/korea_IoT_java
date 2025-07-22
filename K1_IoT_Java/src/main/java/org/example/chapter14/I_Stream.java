@@ -20,9 +20,10 @@ public class I_Stream {
         // cf) .stream()으로 생서된 스트림은 일회성으로만 사용가능
         // - 메서드 체이닝으로 여러 기능 적용은 가능
         Stream<Integer> stream = newNumbers.stream();
+
         List<Integer> a = stream
                 .map(n -> n * n)
-                .toList(); // 최종 연산 - 분변 리스트를 반환 (immutable list) // Java 16 이상
+                .toList(); // 최종 연산 - 불변 리스트를 반환 (immutable list) // Java 16 이상
 
 //        a.add(100); // UnsupportedOperationException
 //        stream.filter(n -> n % 2 == 0)
@@ -31,6 +32,7 @@ public class I_Stream {
 
         System.out.println(numbers);
         System.out.println(newNumbers);
+        System.out.println(a);
 
     }
 }

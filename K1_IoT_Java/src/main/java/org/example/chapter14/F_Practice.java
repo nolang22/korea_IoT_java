@@ -72,7 +72,7 @@ public class F_Practice {
         };
         // [5] Supplier: 무작위 보너스 점수를 생성하는 공급자 함수
         // - 0~5점 중 하나를 반환함
-        // Random() 클래스어ㅢ .nextInt(N): 0이상 N미안의 정수를 반환 (0~5)
+        // Random() 클래스의 .nextInt(N): 0이상 N미만의 정수를 반환 (0~5)
         Supplier<Integer> bonusSupplier = () -> new Random().nextInt(6);
 
         // [6] 프로그램 실행 - 제목 출력

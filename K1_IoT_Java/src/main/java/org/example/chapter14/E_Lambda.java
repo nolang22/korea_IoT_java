@@ -32,17 +32,29 @@ interface Function<T, R> {
     3. Consumer<T> (소비하다)
     : 입력 값을 받아 소비(출력 또는 상태 변경)하는 데 사용
     : 메서드
-            - void accept(T t): 입력값을 소비
-            - andThen(Consumer after): 연속적인 소비 작업을 위해 사용
+        - void accept(T t): 입력값을 소비
+        - andThen(Consumer after): 연속적인 소비 작업을 위해 사용
 @FunctionalInterface
 interface Consumer<T> {
     void accept(T t);
 }
+    4. Supplier<T> (공급하다)
+    : 값을 공급(생성)하는데 사용, 입력 값이 필요로 하지 X
+    : 외부에서 값을 가져오거나, 데이터를 생성하여 반환하는 역할
+    : 메서드
+        - T get(): 반환
+
+@@FunctionalInterface
+interface Supplier<T> {
+    T get();
+}
  */
 
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class E_Lambda {
     public static void main(String[] args) {
@@ -60,6 +72,7 @@ public class E_Lambda {
         System.out.println(isEvenAndPositive.test(4)); // true
         System.out.println(isEvenAndPositive.test(-4)); // false
 
+
         System.out.println("== Function ==");
         // 매개변수(문자열 1개) - 반환값(문자열의 길이값 1개)
         Function<String, Integer> stringLength = s -> s.length();
@@ -70,8 +83,9 @@ public class E_Lambda {
         System.out.println(upperString.apply("nice to meet you")); // NICE TO MEET YOU
 
         Function<String, Integer> lengthAndSquare = stringLength.andThen(square);
-        // : 문자열의 길이(숫자) 값ㅇ르 인자로 받아 제곱
+        // : 문자열의 길이(숫자) 값을 인자로 받아 제곱
         System.out.println(lengthAndSquare.apply("이 문자열 길이의 제곱값은?")); // 225
+
 
         System.out.println("== Consumer ==");
         Consumer<String> printMessage = msg -> System.out.println(msg);
@@ -84,6 +98,17 @@ public class E_Lambda {
         combinedConsumer.accept("123");
         // 123
         // 3
+
+
+        System.out.println("== Supplier ==");
+        //Math.random(): 0.0과 1.0 사이의 무작위 실수를 반환
+        Supplier<Double> randomValue = () -> Math.random();
+
+//        Supplier<Double> random = () -> {
+//            return Math.random();
+//        };
+
+        System.out.println(randomValue.get());
 
     }
 }

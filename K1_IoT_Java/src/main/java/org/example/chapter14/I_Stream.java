@@ -17,7 +17,7 @@ public class I_Stream {
 
         newNumbers.add(10);
 
-        // cf) .stream()으로 생서된 스트림은 일회성으로만 사용가능
+        // cf) .stream()으로 생성된 스트림은 일회성으로만 사용가능
         // - 메서드 체이닝으로 여러 기능 적용은 가능
         Stream<Integer> stream = newNumbers.stream();
 

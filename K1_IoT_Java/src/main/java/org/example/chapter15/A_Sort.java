@@ -21,7 +21,7 @@ package org.example.chapter15;
     2. 배열(Arrays 클래스) 정렬
     : Arrays 클래스의 정적 메서드 (.sort()) 사용
     >> 오름차순 정렬만 지원
-        내림차순 정렬 - Comparator 클래스 사용 .reverseOrder() 정적 메서드를 사용
+        내림차순 정렬 - Collections 클래스 사용 .reverseOrder() 정적 메서드를 사용
 
 
     3. 리스트(List 인터페이스) 정렬
@@ -57,6 +57,8 @@ public class A_Sort {
         // Collections.sort(list);
 
         list.sort(null);
+        System.out.println("\n" + list);
+
         // cf) List.sort()는 내부적으로 Comparator을 전달받음
         //      >> 비교 기준을 정해주는 클래스
         // 1) null
@@ -64,13 +66,10 @@ public class A_Sort {
         // 2) Comparator
         //      : 지정한 Comparator 기준으로 정렬
         //      EX) 데이터의 변환 (문자열 >> 갈이)
+        //      EX) list.sort(Comparator.reverseOrder())
         List<String> listA = new ArrayList<>(List.of("aaa", "aaaaa", "aa", "a", "aaaaaaa"));
         listA.sort(Comparator.comparingInt(String::length));
         System.out.println(listA);
-
-        //      EX) list.sort(Comparator.reverseOrder())
-
-        System.out.println("\n" + list);
 
         // == 내림차순 ==
         Collections.sort(list, Collections.reverseOrder());

@@ -24,12 +24,13 @@ public class C_For {
                            : 반복이 실행될 조건을 정의하는 부분 (해당 조건이 참인 동안 반복문이 실행)
                         3. 증감식
                            : 반복문의 각  실행이 끝나고 변수의 값을 증감하는 부분(매 반복 시 실행)  */
+
         for (int num = 1; num <= 5; num++) {
             System.out.print(num + "\t"); //12345
         }
         System.out.println();
 
-        //=============예제
+        //=============예제 1
         // : for  반복문을 사용하여 1부터 10까지의 숫자 중 짝수만 출력
         for (int i = 1; i < 11; i++) {
             if (i % 2 == 0) {
@@ -37,7 +38,7 @@ public class C_For {
             }
         }
 
-        // ==============예제 2
+        // ============예제 2
         // : 구구단 (3단)
         System.out.println();
         int num = 3;
@@ -88,7 +89,7 @@ public class C_For {
 
             for (int j = 0; j < 10; j++) {
                 int numter = j + 1;
-                System.out.print(dan + " X " + numter + " = " + (dan * numter) + " ");
+                System.out.println(dan + " X " + numter + " = " + (dan * numter) + " ");
             }
         }
 

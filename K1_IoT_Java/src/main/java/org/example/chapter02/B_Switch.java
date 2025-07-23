@@ -30,51 +30,53 @@ public class B_Switch {
           */
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Chapteer를 선택하세요: ");
+        System.out.print("Chapter를 선택하세요: ");
         int chapter = sc.nextInt();
 
         switch (chapter) {
             case 1:
-                System.out.println("자바 기본 문법");
+                System.out.println("기본 햄버거 스타일");
                 break; //해당 case의 실행이 끝나면 switch 문을 빠져나옴! (break  뒤에 문장 작성 X)
 //            System.out.println("안녕");  -> 실행 할수 없음
             case 2:
-                System.out.println("자바 제어문  = 조건문/반복문");
-                System.out.println("switch - case 학습 중입니다.");
+                System.out.println("페퍼로니 버거 스타일");
+                System.out.println("현재 재료 소진 입니다.");
                 break;
             case 3:
-                System.out.println("자바 배열");
+                System.out.println("치킨 버거 스타일");
                 break;
             default:
-                System.out.println("유효한 chapter가 아닙니다");
+                System.out.println("유효한 숫자가 아닙니다");
         }
         sc.nextLine(); //  개행 문자(Enter) 처리
 
-        System.out.print("과일의 이름을 입력해주세요: ");
-        String fruit = sc.nextLine();
+        System.out.print("재료의 이름을 입력해주세요: ");
+        String ingredient = sc.nextLine();
 
-        switch (fruit) {
-            case "banana":
+        switch (ingredient) {
+            case "cheese":
                 System.out.println("노란색");
                 break;
-            case "apple":
+            case "tomato":
                 System.out.println("빨간색");
                 break;
-            case "grape":
-                System.out.println("보라색");
+            case "onion":
+                System.out.println("흰색");
                 break;
             default:
-                System.out.println("유효한 과일이 아닙니다");
+                System.out.println("유효한 재료가 아닙니다");
         }
         sc.close();
 
         /*
-                                    ---if문 VS switch문 ---
-                                    1. if문
-                                    - 사용 대상: 범위 조건, 불리언
-                                    - 조건 개수: 복잡한 조건, 논리식 가능
-                                    - 사용 예시: 점수, 나이, 범위 체크
-                                    >> 조건이 다양하거나 논리식이 필요할 경우 */
+
+                ---if문                                     VS                             switch문 ---
+
+                1. if문
+                - 사용 대상: 범위 조건, 불리언
+                - 조건 개수: 복잡한 조건, 논리식 가능
+                - 사용 예시: 점수, 나이, 범위 체크
+                >> 조건이 다양하거나 논리식이 필요할 경우 */
          int score = 85;
         if (score >= 90) {
             System.out.println("우수한 성적입니다");
@@ -85,11 +87,11 @@ public class B_Switch {
         }
 
 
-         /*                           2. switch문
-                                    - 사용 대상: 정해진 값 비교
-                                    - 조건 개수: 하나의 변수만 다수 값과 비교
-                                    - 사용 예시: 메뉴 선택, 문자열 선택 등
-                                    >> 정확히 일치하는 값 비교할 경우  */
+/*              2. switch문
+                - 사용 대상: 정해진 값 비교
+                - 조건 개수: 하나의 변수만 다수 값과 비교
+                - 사용 예시: 메뉴 선택, 문자열 선택 등
+                >> 정확히 일치하는 값 비교할 경우  */
         String grade = "B";
         switch (grade) {
             case "A": case "B":

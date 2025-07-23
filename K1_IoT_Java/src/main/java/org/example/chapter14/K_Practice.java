@@ -115,7 +115,7 @@ public class K_Practice {
                 .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingInt(Employee::getSalary)
                 ));
 
-        System.out.println("부서별 평균 급여");
-        System.out.println("\n" + avgSalaryByDept);
+        System.out.println("\n" + "부서별 평균 급여");
+        System.out.println(avgSalaryByDept);
     }
 }

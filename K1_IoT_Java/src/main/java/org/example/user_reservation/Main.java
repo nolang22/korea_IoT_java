@@ -30,8 +30,12 @@ package org.example.user_reservation;
    repository: UserRepository, ReservationRepository
  */
 
+import lombok.RequiredArgsConstructor;
+import org.example.user_reservation.controller.ReservationController;
+
 public class Main {
     public static void main(String[] args) {
-
+        ReservationController controller = new ReservationController();
+        controller.run();
     }
 }

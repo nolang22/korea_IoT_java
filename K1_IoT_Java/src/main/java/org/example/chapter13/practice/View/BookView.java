@@ -68,7 +68,6 @@ public class BookView {
 
         System.out.println("1. Fiction / 2. NonFiction");
         int type = getInputMenuNumber();
-        if (type == -1) return null;
 
         if (type == 1) {
             // Fiction

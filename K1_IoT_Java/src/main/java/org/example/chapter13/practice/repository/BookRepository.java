@@ -12,17 +12,17 @@ public class BookRepository {
     // 단일 저장소를 위한 싱글톤(singleton) 인스턴스
     private static final BookRepository instance = new BookRepository();
 
-    // 도서 저장소 (id 값을 Key로 저장 Map)
-    private Map<String, Book> bookStore = new HashMap<>(); // DB(데이터베이스) 역할
-
     private BookRepository() {} // private 생성자 - 외부 호출 불가!
-
-    private List<Book> books = new ArrayList<>(); // DB(데이터베이스) 역할
 
     //인스턴스 반환 메서드
     public static BookRepository getInstance() {
         return instance;
     }
+
+    private List<Book> books = new ArrayList<>(); // DB(데이터베이스) 역할
+
+    // 도서 저장소 (id 값을 Key로 저장 Map)
+    private Map<String, Book> bookStore = new HashMap<>(); // DB(데이터베이스) 역할
 
     // 도서 저장(Create)
     public Book save(Book book) {

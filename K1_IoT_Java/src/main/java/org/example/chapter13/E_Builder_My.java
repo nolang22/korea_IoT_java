@@ -20,15 +20,15 @@ package org.example.chapter13;
         3) builder() 메서드 호출하여 객체 생성
 
     4. 빌더 사용 방법 */
-class Pizza {
+class MyPizza {
     // 필수 사항
     private final String menu; // 종류
     private final String size; // 크기
 
     // 선택 사항
-    private final boolean cheese;
-    private final boolean mushroom;
-    private final boolean pepperoni;
+    private final String cheese;
+    private final String mushroom;
+    private final String pepperoni;
 
 //    public Pizza(String menu, String size) {
 //        this.menu = menu;
@@ -58,9 +58,9 @@ class Pizza {
         private final String size;
 
         // 선택 필드: 기본값 설정 (추가하지 않으면 해당 값으로 입력)
-        private boolean cheese = false;
-        private boolean mushroom = false;
-        private boolean pepperoni = false;
+        private String cheese =  null;
+        private String mushroom = null;
+        private String pepperoni = null;
 
         //필드값 초기화
         public Builder(String menu, String size) {
@@ -69,30 +69,30 @@ class Pizza {
         }
 
         //선택 값 지정 메서드
-        public Builder addCheese() {
-            this.cheese = true;
+        public Builder addCheese(String str) {
+            this.cheese =  str;
             return this; // this는 해당 클래스 타입의 객체 그자체!
         }
 
-        public Builder addMushroom() {
-            this.mushroom = true;
+        public Builder addMushroom(String str) {
+            this.mushroom = str;
             return this;
         }
 
-        public Builder addPepperoni() {
-            this.pepperoni = true;
+        public Builder addPepperoni(String str) {
+            this.pepperoni = str;
             return this;
         }
 
         // Builder 객체를 생성하는 Build 메서드
         // : 인스턴스 메서드 - 인스턴스.메서드명();
-        public Pizza build() {
-            return new Pizza(this);
+        public MyPizza build() {
+            return new MyPizza(this);
         }
 
     }
 
-    private Pizza(Builder builder) {
+    private MyPizza(Builder builder) {
         this.menu = builder.menu;
         this.size = builder.size;
 
@@ -108,24 +108,24 @@ class Pizza {
     }
 }
 
-public class E_Builder {
+public class E_Builder_My {
     public static void main(String[] args) {
         // Pizza noBuilderPizza = new Pizza("파인애플 피자", "L", false, false, false;
 
-        Pizza builderPizza = new Pizza.Builder("고구마 피자", "M").build();
+        MyPizza builderPizza12 = new MyPizza.Builder("고구마 피자", "M").build();
 
-        Pizza optionalPizza1 = new Pizza.Builder("포테이토 피자", "S") // Builder 인스턴스 생성
-                .addCheese() // Builder 인스턴스 메서드 - 반환 Builder 객체
-                .addMushroom() // Builder 인스턴스 메서드 - 반환 Builder 객체
+        MyPizza optionalPizza12 = new MyPizza.Builder("포테이토 피자", "S") // Builder 인스턴스 생성
+                .addCheese("많이") // Builder 인스턴스 메서드 - 반환 Builder 객체
+                .addMushroom("많이") // Builder 인스턴스 메서드 - 반환 Builder 객체
                 .build(); // Builder 인스턴스 메서드 - 반환 Pizza 객체
 
-        Pizza optionalPizza2 = new Pizza.Builder("쉬림프 피자", "L")
-                .addPepperoni()
+        MyPizza optionalPizza22 = new MyPizza.Builder("쉬림프 피자", "L")
+                .addPepperoni("조금")
                 .build();
 
-        System.out.println(builderPizza);
-        System.out.println(optionalPizza1);
-        System.out.println(optionalPizza2);
+        System.out.println(builderPizza12);
+        System.out.println(optionalPizza12);
+        System.out.println(optionalPizza22);
 
 
         // cf) 메서드 체이닝

@@ -9,8 +9,6 @@ package org.example.chapter13;
     - Optional<T>: 값이 있을 수도 없을 수도 있는 객체 래퍼
   */
 
-import org.example.chapter12.model.Book;
-
 import java.util.ArrayList;
 import java.util.List;
 

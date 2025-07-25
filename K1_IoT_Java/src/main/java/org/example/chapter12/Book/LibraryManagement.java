@@ -1,4 +1,4 @@
-package org.example.chapter12;
+package org.example.chapter12.Book;
 
 /*  === 도서 관리 시스템 ===
 
@@ -22,9 +22,9 @@ package org.example.chapter12;
 
  */
 
-import org.example.chapter12.controller.BookController;
-import org.example.chapter12.model.Book;
-import org.example.chapter12.view.BookView;
+import org.example.chapter12.Book.controller.BookController;
+import org.example.chapter12.Book.model.Book;
+import org.example.chapter12.Book.view.BookView;
 
 import java.util.ArrayList;
 import java.util.List;

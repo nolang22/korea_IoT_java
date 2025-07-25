@@ -1,7 +1,7 @@
-package org.example.chapter12.view;
+package org.example.chapter12.Book.view;
 
-import org.example.chapter12.controller.BookController;
-import org.example.chapter12.model.Book;
+import org.example.chapter12.Book.controller.BookController;
+import org.example.chapter12.Book.model.Book;
 
 import java.util.List;
 import java.util.Scanner;

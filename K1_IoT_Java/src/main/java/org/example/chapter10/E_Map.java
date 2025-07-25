@@ -4,7 +4,7 @@ package org.example.chapter10;
     : 키(key)와 값(value)의 쌍으로 요소를 저장하는 데이터 구조
     - 키는 고유한 데이터를 가짐 (중복 키 허용 X)
     - 동일한 키에 서로 다른 값 전달 시 시존 값이 새로운 값으로 덮어씌워짐
-    EX) name: "이승승, namse: "이도도" (불가! - name: "이도도"만 존재)
+    EX) name: "이승승, name: "이도도" (불가! - name: "이도도"만 존재)
 
     cf) 서로 다른 키에 동일한 값은 가능
     EX) name: "개구리", nickname: "개구리"

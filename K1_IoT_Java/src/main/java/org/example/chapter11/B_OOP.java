@@ -56,7 +56,7 @@ class RobotClass implements Workable {
     }
 }
 
-/*  5. DIP(Dependency Inversion Principle, 의전 역전 원칙)
+/*  5. DIP(Dependency Inversion Principle, 의존 역전 원칙)
     : 고수준 모듈은 저수준 모듈에 의존해서는 안됨.
     - 모두 추상화에 의존해야 함
     - 세부 구현이 아닌, 추상화된 인터페이스에 의존하도록 설계

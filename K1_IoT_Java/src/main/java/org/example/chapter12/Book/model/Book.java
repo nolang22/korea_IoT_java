@@ -1,4 +1,4 @@
-package org.example.chapter12.model;
+package org.example.chapter12.Book.model;
 
 /*  Book 클래스
     : 책 객체를 정의하는 클래스

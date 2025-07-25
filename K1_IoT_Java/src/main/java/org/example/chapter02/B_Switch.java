@@ -53,20 +53,29 @@ public class B_Switch {
         System.out.print("재료의 이름을 입력해주세요: ");
         String ingredient = sc.nextLine();
 
+//        switch (ingredient) {
+//            case "cheese":
+//                System.out.println("노란색");
+//                break;
+//            case "tomato":
+//                System.out.println("빨간색");
+//                break;
+//            case "onion":
+//                System.out.println("흰색");
+//                break;
+//            default:
+//                System.out.println("유효한 재료가 아닙니다");
+//        }
+
         switch (ingredient) {
-            case "cheese":
-                System.out.println("노란색");
-                break;
-            case "tomato":
-                System.out.println("빨간색");
-                break;
-            case "onion":
-                System.out.println("흰색");
-                break;
-            default:
-                System.out.println("유효한 재료가 아닙니다");
+            case "cheese" -> System.out.println("노란색");
+
+            case "tomato" -> System.out.println("빨간색");
+
+            case "onion" -> System.out.println("흰색");
+
+            default -> System.out.println("유효한 재료가 아닙니다");
         }
-        sc.close();
 
         /*
 

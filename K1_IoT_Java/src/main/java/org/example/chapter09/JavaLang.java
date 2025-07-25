@@ -53,7 +53,7 @@ public class JavaLang {
         System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
         // equals() 메서드
         // : 인스턴스 메서드
-        MyClass myClass2 = new MyClass(2, "전태희");
+        MyClass myClass2 = new MyClass(2, "전태태");
         System.out.println("myClass1과 myClass2의 비교: " + myClass1.equals(myClass2));
 
         MyClass myClass3 = myClass1;
@@ -77,6 +77,7 @@ public class JavaLang {
         System.out.println(Math.random());
         // : 무작위 난수를 생성
         // : 0.0 이상 0.1 미만의 난수를 생성
+
 
         System.out.println("== String ==");
         String message = "Merry Christmas!";

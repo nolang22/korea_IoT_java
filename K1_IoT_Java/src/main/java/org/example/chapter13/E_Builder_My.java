@@ -20,6 +20,7 @@ package org.example.chapter13;
         3) builder() 메서드 호출하여 객체 생성
 
     4. 빌더 사용 방법 */
+
 class MyPizza {
     // 필수 사항
     private final String menu; // 종류

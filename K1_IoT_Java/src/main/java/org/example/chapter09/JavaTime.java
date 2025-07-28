@@ -6,7 +6,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 /*  == java.time 패키지 == //
-    150-8601 vywnsdmf rlqksdmfh tjfrP
+    ISO-8601 표준을 기반으로 설계
     : YYYY-MM-DDThh:mm:ss:sssZ 형식
     - import 문을 사용하여 클래스를 명시
 

@@ -24,7 +24,7 @@ public class B_Array {
 
         //2) 향상된 for문 (for=each문)
         //: 배열을 순회(탐색)하는 방법
-        //- for문의 간결환 형태
+        //- for 문의 간결환 형태
         /*
            for(데이타입 변수명: 해당 데이터타입의 배열) {
               배열의 각 요소를 활용하는 코드
@@ -32,7 +32,7 @@ public class B_Array {
          */
         System.out.println("== 향상된 for문 (for=each문) ==");
         for (int score : scores) {
-            // score 변수: for문의 반복에서 배열의 요소를 순차적으로 남는 변수
+            // score 변수: for 문의 반복에서 배열의 요소를 순차적으로 남는 변수
             System.out.print (score+ " ");
 
         }
@@ -53,8 +53,8 @@ public class B_Array {
 
         //2) 향상된 for문(for-each)문을 사용하여 합계
 
-        for (int socre : scores) {
-            total += socre;
+        for (int score : scores) {
+            total += score;
         }
 
 

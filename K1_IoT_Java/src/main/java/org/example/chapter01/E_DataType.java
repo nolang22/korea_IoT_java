@@ -24,8 +24,8 @@ public class E_DataType {
         */
 
         // 1. 기본 타입 (자료형 - 8개)
-        // byte(1), short(2), long(8), float(4)
-        //* int(4), double(8), char(2), boolean(1)
+        // byte(1), short(2), int(4), long(8),
+        // float(4) double(8), char(2), boolean(1)
 
         // cf) 자료형 크기 단위
         // 1byte 체계 == 8bit
